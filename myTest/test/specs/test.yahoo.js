@@ -18,8 +18,7 @@ describe('My Login application', () => {
        await textPassword.loginPassword('Leto354Pas');
        await textPassword.nextButtonPassword.waitForDisplayed();
        await textPassword.nextButtonPassword.click();
-       await textPassword.accountName.waitForDisplayed();
-       await textPassword.accountName.isEqual(true);
+       await expect (await textPassword.accountName.waitForDisplayed()).is.equal(true);
         });
 
     it('should create new email and save it as a draft, verify that the mail is in the "Draft"', async () => { 
